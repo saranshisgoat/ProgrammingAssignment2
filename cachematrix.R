@@ -50,7 +50,9 @@ cacheSolve <- function(x, ...) {
   x$setinv(inv)
   inv
 }
-## Checking the program
 m <- matrix(rnorm(16),4,4)
 m1 <- makeCacheMatrix(m)
-cacheSolve(m1)
+cached_result = cacheSolve(m1)
+cached_result
+## Check if the cached result is identical to the result obtained directly
+identical(cached_result, solve(m))
